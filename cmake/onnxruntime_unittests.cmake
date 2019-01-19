@@ -499,3 +499,9 @@ add_executable(onnxruntime_mlas_test ${TEST_SRC_DIR}/mlas/unittest.cpp)
 target_include_directories(onnxruntime_mlas_test PRIVATE ${ONNXRUNTIME_ROOT}/core/mlas/inc)
 target_link_libraries(onnxruntime_mlas_test PRIVATE onnxruntime_mlas)
 set_target_properties(onnxruntime_mlas_test PROPERTIES FOLDER "ONNXRuntimeTest")
+
+
+add_executable(snnn_test ${TEST_SRC_DIR}/snnn/main.cpp)
+target_include_directories(snnn_test PRIVATE ${eigen_INCLUDE_DIRS})
+target_compile_definitions(snnn_test PRIVATE EIGEN_USE_THREADS)
+target_link_libraries(snnn_test PRIVATE Threads::Threads)
